@@ -1,10 +1,10 @@
 #!/bin/sh
 
-wget -qO - https://packages.confluent.io/deb/7.1/archive.key | apt-key add -
-add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/7.1 stable main"
-add-apt-repository "deb https://packages.confluent.io/clients/deb $(lsb_release -cs) main"
-apt update
-apt install librdkafka-dev
+wget -qO - https://packages.confluent.io/deb/7.1/archive.key | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/7.1 stable main"
+sudo add-apt-repository "deb https://packages.confluent.io/clients/deb $(lsb_release -cs) main"
+sudo apt update
+sudo apt install librdkafka-dev
 
 PROJDIR=`cd $(dirname $0); pwd -P`
 cd $PROJDIR
